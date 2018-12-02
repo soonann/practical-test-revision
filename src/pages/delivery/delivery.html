@@ -23,9 +23,9 @@
         Time
       </ion-label>
 
-      <ion-select placeholder="" [(ngModel)]='delivery.time'  name='time'>
+      <ion-select placeholder="" [(ngModel)]='delivery.time' name='time'>
 
-        <ion-option *ngFor='let opts of deliveryTiming' [value]='opts' > 
+        <ion-option  *ngFor='let opts of deliveryTiming' [value]='opts'> 
           {{opts}}
         </ion-option>
 
@@ -37,7 +37,7 @@
       <ion-label>
         Address
       </ion-label>
-      <ion-textarea placeholder=""  required [(ngModel)]='delivery.address' name='address' ></ion-textarea>
+      <ion-textarea placeholder="" #address='ngModel'  required [(ngModel)]='delivery.address' name='address' ></ion-textarea>
     </ion-item>
 
     <ion-item id="delivery-toggle1">
@@ -50,6 +50,7 @@
     <div>
       <p ion-text *ngIf='this.submitted && deliveryForm.invalid' color="danger">Address is required</p>
     </div>
+
   <button id="delivery-button2" ion-button color="positive" block  (click)='submitForm(deliveryForm)'>
       SUBMIT
     </button>

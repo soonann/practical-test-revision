@@ -10,6 +10,7 @@ import { DetailPage } from '../pages/detail/detail';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     CartPage,
     DeliveryPage,
     DetailPage
+  
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,7 @@ import { FormsModule } from '@angular/forms';
     DetailPage
   ],
   providers: [
-    
+    DatePipe,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

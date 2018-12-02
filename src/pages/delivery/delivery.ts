@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Delivery } from './../../models/Delivery';
 import { Component , OnInit} from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -16,16 +17,18 @@ export class DeliveryPage implements OnInit{
   submitted = false;
 
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private datepipe: DatePipe) {
   
   }
 
   ngOnInit(){
-    
-    this.deliveryTiming = [ '12am - 9am', '9am - 12am'];
-    this.delivery = new Delivery('','','',true);
+
+    this.deliveryTiming = [ '12 - 3pm' , '6 - 9pm'];
+    this.delivery = new Delivery( new Date().toISOString() , this.deliveryTiming[0] ,'',true);
 
   }
+
+
 
   submitForm(form:NgForm){
     
@@ -34,7 +37,7 @@ export class DeliveryPage implements OnInit{
     if (form.valid){
       alert( 
         'Your delivery has been scheduled on '+ 
-        this.delivery.date +
+        this.datepipe.transform(this.delivery.date, 'dd MMM yyyy')+
         ' at ' +  
         this.delivery.time
       );

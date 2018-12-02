@@ -19,14 +19,12 @@ export class CartPage implements OnInit{
   }
 
   ngOnInit(){
-  
     this.products = [
       new Product('Samsung',949,'assets/img/samsung.jpg',2),
       new Product('LG',649,'assets/img/lg.jpg',3),
       new Product('Midea',399,'assets/img/midea.jpg',1),
       new Product('Fisher & Parkel',1049,'assets/img/fisher.jpg',3),
       new Product('Whirlpool',999,'assets/img/whirlpool.jpg',2)
-        
   ]
 
   }
@@ -35,27 +33,21 @@ export class CartPage implements OnInit{
   filterItem(ev: any){
 
     this.ngOnInit();
-
     let val = ev.target.value;
    
     if(val && val.trim() != ''){
-
       this.products = this.products.filter( 
         (x) => {
           return x.name.toLowerCase().includes(val.toLowerCase()) 
         }
       )
-  
-
     }
 
     
   }
 
   deleteItem(prod: Product){
-    
     this.products.splice(this.products.indexOf(prod),1);
-
   }
 
   goToDelivery(params){
