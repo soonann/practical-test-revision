@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Cart
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page1">
+  <div id="cart-container3">
+    <form id="cart-form2">
+      <ion-searchbar placeholder="" name="" (ionInput)='filterItem($event)'  id="cart-search2"></ion-searchbar>
+
+
+      <ion-list id="cart-list6">
+
+
+        <ion-item-sliding *ngFor='let prod of products'>
+
+          <ion-item color="none" (click)="goToDetail(prod)" >
+            <ion-thumbnail item-left>
+              <img src="{{prod.image}}" />
+            </ion-thumbnail>
+            <h2>
+              {{prod.name}}
+            </h2>
+          </ion-item>
+
+          <ion-item-options side="right">
+            <button ion-button color="danger" (click)='deleteItem(prod)'>
+              DELETE
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+
+
+      </ion-list>
+      <button id="cart-button3" ion-button color="positive" block on-click="goToDelivery()">
+        NEXT
+      </button>
+    </form>
+  </div>
+</ion-content>
