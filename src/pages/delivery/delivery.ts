@@ -24,7 +24,7 @@ export class DeliveryPage implements OnInit{
   ngOnInit(){
 
     this.deliveryTiming = [ '12 - 3pm' , '6 - 9pm'];
-    this.delivery = new Delivery( new Date().toISOString() , this.deliveryTiming[0] ,'',true);
+    this.delivery = new Delivery( new Date().toISOString(), this.deliveryTiming[0] , '', true);
 
   }
 
