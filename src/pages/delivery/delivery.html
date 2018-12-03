@@ -48,7 +48,7 @@
     </ion-item>
 
     <div>
-      <p ion-text *ngIf='this.submitted && deliveryForm.invalid' color="danger">Address is required</p>
+      <p ion-text *ngIf='this.submitted && address.invalid' color="danger">Address is required</p>
     </div>
 
   <button id="delivery-button2" ion-button color="positive" block  (click)='submitForm(deliveryForm)'>
