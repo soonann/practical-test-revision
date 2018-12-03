@@ -36,17 +36,17 @@ export class DeliveryPage implements OnInit{
     
     if (form.valid){
       const alert = this.alertCtrl.create({
-        title: 'New Friend!',
-        subTitle: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
+        title: 'Success',
+        subTitle:   'Your delivery has been scheduled on '+ 
+        this.datepipe.transform(this.delivery.date, 'dd MMM yyyy')+
+        ' at ' +  
+        this.delivery.time,
         buttons: ['OK']
       });
       alert.present();
       }
       alert( 
-        'Your delivery has been scheduled on '+ 
-        this.datepipe.transform(this.delivery.date, 'dd MMM yyyy')+
-        ' at ' +  
-        this.delivery.time
+      
       );
 
     }
