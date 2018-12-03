@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Delivery } from './../../models/Delivery';
 import { Component , OnInit} from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 
 
@@ -17,7 +17,7 @@ export class DeliveryPage implements OnInit{
   submitted = false;
 
 
-  constructor(public navCtrl: NavController, private datepipe: DatePipe) {
+  constructor(public navCtrl: NavController, private datepipe: DatePipe, private alertCtrl: AlertController) {
   
   }
 
@@ -35,6 +35,13 @@ export class DeliveryPage implements OnInit{
     this.submitted = true;
     
     if (form.valid){
+      const alert = this.alertCtrl.create({
+        title: 'New Friend!',
+        subTitle: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
+        buttons: ['OK']
+      });
+      alert.present();
+      }
       alert( 
         'Your delivery has been scheduled on '+ 
         this.datepipe.transform(this.delivery.date, 'dd MMM yyyy')+
