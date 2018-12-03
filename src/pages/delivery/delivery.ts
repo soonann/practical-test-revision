@@ -5,11 +5,11 @@ import { NavController, AlertController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 
 
-
 @Component({
   selector: 'page-delivery',
   templateUrl: 'delivery.html'
 })
+
 export class DeliveryPage implements OnInit{
 
   delivery: Delivery;
@@ -28,8 +28,6 @@ export class DeliveryPage implements OnInit{
 
   }
 
-
-
   submitForm(form:NgForm){
     
     this.submitted = true;
@@ -45,18 +43,13 @@ export class DeliveryPage implements OnInit{
       });
       alert.present();
       }
-      alert( 
-      
-      );
-
-    }
-    
+     
 
   }
+    
 
-
-
-  
-
-  
 }
+
+
+  
+
